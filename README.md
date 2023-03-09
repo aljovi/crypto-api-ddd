@@ -1,5 +1,9 @@
 # TypeScript Crypto Api - DDD
 
+## Authors:
+- Diego Hermoso
+- Albert Vives
+
 ## Commands
 
 ### Build App
