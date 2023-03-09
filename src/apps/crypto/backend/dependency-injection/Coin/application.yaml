@@ -11,3 +11,13 @@ services:
     arguments: ['@Coin.searchAll.AllCoinsSearcher']
     tags:
       - { name: 'queryHandler' }
+
+  Coin.find.CoinFinder:
+    class: ../../../../../Contexts/Crypto/Coin/application/find/CoinFinder
+    arguments: ['@Coin.CoinRepository']
+
+  Coin.find.FindCoinQueryHandler:
+    class: ../../../../../Contexts/Crypto/Coin/application/find/FindCoinQueryHandler
+    arguments: ['@Coin.find.CoinFinder']
+    tags:
+      - { name: 'queryHandler' }
