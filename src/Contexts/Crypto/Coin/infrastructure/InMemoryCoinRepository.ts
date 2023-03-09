@@ -16,4 +16,11 @@ export class InMemoryCoinRepository implements CoinRepository {
       Coin.create(CoinId.fromString('BAT'), CoinName.fromString('Basic Attention Token'), CoinPrice.fromNumber(1.00))
     ];
   }
+
+  async findById(coinId: CoinId): Promise<Coin|undefined> {
+    return this.inMemoryValues().find(
+      (coin) => coinId.equals(coin.id)
+    );
+  }
+
 }
